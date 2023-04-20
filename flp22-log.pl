@@ -50,7 +50,10 @@ extractEdges([],[]).
 extractEdges([[[X],[S]]|Sx],Z):-extractEdges(Sx,R),list_concat([(X:S),(S:X)],R,Z).
 
 
-test([X,Y],Z):- Z is X+Y.
+stepEproved(X,Y,[(Xc:Yc)|Eges]):- X is Xc , Y is Yc ; stepEproved(X,Y,Eges).
+
+testIt(Start,Curent,[],_):- Start is Curent. 
+testIt(Start,Curent,[Next|Rest],Edges):- stepEproved(Curent,Next,Edges),testIt(Start,Next,Rest,Edges).
 
 main :-
 	prompt(_, ''),
