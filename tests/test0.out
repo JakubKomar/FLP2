@@ -1,0 +1,4 @@
+./flp22-log
+A-B A-C B-D C-D 
+A-B A-D B-C C-D 
+A-C A-D B-C B-D 

@@ -1,0 +1,27 @@
+# Projekt:  Problém Hamiltonovské kružnice
+# Rok: 	    2023
+# Autor: 	Bc. Jakub Komárek (xkomar33)
+
+# Návod k použití
+1. make
+2. make run < vstup.txt 
+2. případně ./flp22-log < vstup.txt 
+
+# Popis použité metody
+Metoda staví na prohledávání stavového prostoru do hloubky.
+Hlavní funkce pro prohledávání stavového prostoru je findSolutionSorted.
+Všechna našlá řešení jsou seřazena pro jednoduchou redukci duplicitních (reverzních) hran.
+
+Stavový prostor je reprezentován jako strom, kterým se snažíme do hloubky procházet. Každý přechod je reprezentován jako hrana grafu. V případě dosažení startovního uzlu a navštívení všech uzlů grafu je cesta prohlášena za řešení. Pokud cesta nevede k řešení, backtrackingem se navrátíme stromem a pokračujeme další cestou. 
+
+Při nenalezení řešení je tato skutečnost vypsána
+
+# Spuštění s vlastními vstupy
+make run < tests/test<X>.in , kde <X> je číslo testu
+0    - test ze zadání
+1-3  - jednoduché testy
+4-5  - náročné testy (výpočetní čas okolo půl minuty)
+6-10 - chybné, nestandartní, neřešitelné vstupy
+
+# Omezení
+Žádné
